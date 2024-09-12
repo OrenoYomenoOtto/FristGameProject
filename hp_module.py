@@ -4,10 +4,15 @@ class hp():
         self.current_hp = current_hp
 
     def heal_hp(self, heal_amount:int):
-        pass
+        if self.current_hp + heal_amount >= self.max_hp:
+            self.current_hp = self.max_hp
+        else:
+            self.current_hp += heal_amount
 
     def receive_damage(self, damage_amount:int):
-        pass
+        self.current_hp -= damage_amount
+        if self.current_hp < 0:
+            self.current_hp = 0
 
     def check_can_heal(self):
         isMax = False
