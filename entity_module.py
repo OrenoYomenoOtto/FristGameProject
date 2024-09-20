@@ -27,11 +27,11 @@ class entity():
     
     #HP回復メソッド
     def heal_hp(self,heal:int):
-        self.__hp.heal(heal)
+        self.__hp.heal_hp(heal)
 
     #MP回復メソッド
     def recovery_mp(self, recovery:int):
-        self.__mp.recovery(recovery)
+        self.__mp.recovery_mp(recovery)
     
     #生死判定メソッド
     def check_is_dead(self):
