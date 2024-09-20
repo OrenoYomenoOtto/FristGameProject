@@ -41,6 +41,22 @@ class entity():
     def get_hp(self):
         return self.__hp
     
+    #mp参照メソッド
+    def get_mp(self):
+        return self.__mp
+    
+    #攻撃値参照メソッド
+    def get_attack(self):
+        return self.__attack
+    
+    #防御値参照メソッド
+    def get_defense(self):
+        return self.__defense
+    
+    #行動力参照メソッド
+    def get_actweight(self):
+        return self.__actweight
+
 #playerクラス
 class player(entity):
     #初期化
