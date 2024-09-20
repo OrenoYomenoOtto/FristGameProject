@@ -41,3 +41,36 @@ class entity():
     def get_hp(self):
         return self.__hp
     
+#playerクラス
+class player(entity):
+    #初期化
+    def __init__(self,
+        hit_point,
+        magic_point,
+        attack,
+        defense,
+        act_weight,
+        name,
+        remaining,
+        ):
+        super().__init__(
+            hit_point,
+            magic_point,
+            attack,
+            defense,
+            act_weight,
+            )  #親クラスのコンストラクタを呼び出し
+        self.__name = name
+        self.__remaining = remaining
+    
+    #空腹値を変更するメソッド
+    def decrease_hunger():
+        pass
+
+    #name参照メソッド
+    def get_name(self):
+        return self.__name
+
+    #remaining参照メソッド
+    def get_remaining(self):
+        return self.__remaining
