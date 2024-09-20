@@ -74,3 +74,29 @@ class player(entity):
     #remaining参照メソッド
     def get_remaining(self):
         return self.__remaining
+    
+    #攻撃力更新メソッド
+    def update_attack_bybp(self, bp:int):
+        self.__attack += bp
+
+    #防御力更新メソッド
+    def update_defense_bybp(self, bp:int):
+        self.__defense += bp 
+
+    #hp更新メソッド
+    def update_hp_bybp(self, bp:int):
+        self.__hp.change_by_bp(bp)
+
+    #mp更新メソッド
+    def update_defense_bybp(self, bp:int):
+        self.__mp.change_by_bp(bp)
+
+    #行動力更新メソッド
+    def update_act_weight(self, bp:int):
+        update_value = self.__actweight - 10*bp
+        #行動力が3以下にならないときのみ更新する
+        if update_value >= 3:
+            self.__actweight = update_value
+            return True
+        else:
+            return False
