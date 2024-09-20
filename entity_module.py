@@ -45,20 +45,11 @@ class entity():
 class player(entity):
     #初期化
     def __init__(self,
-        hit_point,
-        magic_point,
-        attack,
-        defense,
-        act_weight,
         name,
         remaining,
         ):
         super().__init__(
-            hit_point,
-            magic_point,
-            attack,
-            defense,
-            act_weight,
+            10,10,10,10,10, #全能力値は10
             )  #親クラスのコンストラクタを呼び出し
         self.__name = name
         self.__remaining = remaining
@@ -93,7 +84,7 @@ class player(entity):
 
     #行動力更新メソッド
     def update_act_weight(self, bp:int):
-        update_value = self.__actweight - 10*bp
+        update_value = self.__actweight - bp
         #行動力が3以下にならないときのみ更新する
         if update_value >= 3:
             self.__actweight = update_value
