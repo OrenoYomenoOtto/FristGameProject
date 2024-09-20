@@ -1,9 +1,6 @@
-class Bp():
+class bp():
     def __init__(self,total_point):
         self.total_point = total_point
-
-    def define_point(self):
-        pass
 
     def define_hp(self):
         pass
@@ -18,4 +15,7 @@ class Bp():
         pass
 
     def define_sw(self):
+        pass
+
+    def define_point(self):
         pass
