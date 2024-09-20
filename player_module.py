@@ -36,6 +36,22 @@ class player(entity_module.entity):
     def get_remaining(self):
         return self.__remaining
     
+    #残機があるかを返すメソッド
+    def has_remaining(self):
+        if self.__remaining >= 1:
+            return True
+        else:
+            return False
+        
+    #残機を減らすメソッド
+    def decrease_remaining(self):
+        if self.has_remaining():
+            self.__remaining -=1
+            return True
+        else:
+            return False
+
+
     #攻撃力更新メソッド
     def update_attack_bybp(self, bp:int):
         self.__attack += bp
