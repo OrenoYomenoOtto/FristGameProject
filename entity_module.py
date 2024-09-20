@@ -5,17 +5,17 @@ import mp_module
 class entity():
     #初期化
     def __init__(self,
-                 hit_point:hp_module.hp,
-                 magic_point:mp_module.mp,
-                 attack:int,
-                 defense:int,
-                 act_weight:int,
+                 init_hp:int,
+                 init_mp:int,
+                 init_attack:int,
+                 init_defense:int,
+                 init_act_weight:int,
                  ) -> None:
-        self.__hp = hit_point
-        self.__attack = attack
-        self.__defense = defense
-        self.__actweight = act_weight
-        self.__mp = magic_point
+        self.__hp = hp_module.hp(init_hp,init_hp)
+        self.__mp = mp_module.mp(init_hp,init_hp)
+        self.__attack = init_attack
+        self.__defense = init_defense
+        self.__actweight = init_act_weight
 
     #ダメージを受けるメソッド
     def update_hp_damage(self,damage:int):

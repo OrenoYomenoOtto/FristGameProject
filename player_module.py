@@ -1,9 +1,10 @@
 import entity_module
 
-PLAYER_INITIAL_ATTACK = 10
-PLAYER_INITIAL_DEFENSE = 10
+#初期パラメータ用の定数
 PLAYER_INITIAL_HP = 10
 PLAYER_INITIAL_MP = 10
+PLAYER_INITIAL_ATTACK = 10
+PLAYER_INITIAL_DEFENSE = 10
 PLAYER_INITIAL_ACTWEIGHT = 10
 
 #playerクラス
@@ -14,10 +15,10 @@ class player(entity_module.entity):
         remaining,
         ):
         super().__init__(
-            PLAYER_INITIAL_ATTACK,
-            PLAYER_INITIAL_DEFENSE,
             PLAYER_INITIAL_HP,
             PLAYER_INITIAL_MP,
+            PLAYER_INITIAL_ATTACK,
+            PLAYER_INITIAL_DEFENSE,
             PLAYER_INITIAL_ACTWEIGHT,
             )  #親クラスのコンストラクタを呼び出し
         self.__name = name
@@ -27,11 +28,11 @@ class player(entity_module.entity):
     def decrease_hunger():
         pass
 
-    #name参照メソッド
+    #名前参照メソッド
     def get_name(self):
         return self.__name
 
-    #remaining参照メソッド
+    #残機参照メソッド
     def get_remaining(self):
         return self.__remaining
     
