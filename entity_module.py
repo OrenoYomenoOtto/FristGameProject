@@ -1,8 +1,9 @@
 import hp_module
 import mp_module
+from abc import ABC, abstractmethod
 
 #エンティティクラス
-class entity():
+class entity(ABC):
     #初期化
     def __init__(self,
                  init_hp:int,
@@ -12,7 +13,7 @@ class entity():
                  init_act_weight:int,
                  ) -> None:
         self.__hp = hp_module.hp(init_hp,init_hp)
-        self.__mp = mp_module.mp(init_hp,init_hp)
+        self.__mp = mp_module.mp(init_mp,init_mp)
         self.__attack = init_attack
         self.__defense = init_defense
         self.__actweight = init_act_weight
@@ -25,6 +26,18 @@ class entity():
     def calculate_damage(self, attack:int):
         return attack // self.__defense
     
+    #装備品(プレイヤーのみ)・状態異常(追加予定)を加味して真の攻撃力を返すメソッド
+    #オーバーライド前提(抽象メソッド)
+    @abstractmethod
+    def get_true_attack(self):
+        pass
+
+    #装備品(プレイヤーのみ)・状態異常(追加予定)を加味して真の防御力を返すメソッド
+    #オーバーライド前提(抽象メソッド)
+    @abstractmethod
+    def get_true_defense(self):
+        pass
+
     #HP回復メソッド
     def heal_hp(self,heal:int):
         self.__hp.heal_hp(heal)
@@ -43,15 +56,7 @@ class entity():
     
     #mp参照メソッド
     def get_mp(self):
-        return self.__mp
-    
-    #攻撃値参照メソッド
-    def get_attack(self):
-        return self.__attack
-    
-    #防御値参照メソッド
-    def get_defense(self):
-        return self.__defense
+        return self.__mp  
     
     #行動力参照メソッド
     def get_actweight(self):
