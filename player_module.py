@@ -8,7 +8,7 @@ PLAYER_INITIAL_DEFENSE = 10
 PLAYER_INITIAL_ACTWEIGHT = 10
 
 #playerクラス
-class player(entity_module.entity):
+class Player(entity_module.Entity):
     #初期化
     def __init__(self,
         name,
@@ -32,18 +32,18 @@ class player(entity_module.entity):
     def get_name(self):
         return self.__name
 
-    #残機参照メソッド
+    #残機参照メソッド(OK)
     def get_remaining(self):
         return self.__remaining
     
-    #残機があるかを返すメソッド
+    #残機があるかを返すメソッド(OK)
     def has_remaining(self):
         if self.__remaining >= 1:
             return True
         else:
             return False
         
-    #残機を減らすメソッド
+    #残機を減らすメソッド(OK)
     def decrease_remaining(self):
         if self.has_remaining():
             self.__remaining -=1
@@ -53,7 +53,7 @@ class player(entity_module.entity):
 
     #装備品(プレイヤーのみ)・状態異常(追加予定)を加味して真の攻撃力を返すメソッド
     #現時点で未実装のため、素の攻撃力を返す
-    def get_true_defense(self):
+    def get_true_attack(self):
         return self.__attack
 
     #装備品(プレイヤーのみ)・状態異常(追加予定)を加味して真の防御力を返すメソッド

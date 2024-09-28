@@ -1,12 +1,14 @@
 import entity_module
 import random
 
-#playerクラス
-class player(entity_module.entity):
+#enemyクラス
+class Enemy(entity_module.Entity):
     #初期化
-    def __init__(self,drop_item, drop_money, item_drop_probabily
+    def __init__(self, enemy_hp, enemy_mp, enemy_attack,
+                 enemy_defense, enemy_actweight, drop_item, drop_money, item_drop_probabily
         ):
         super().__init__(
+            enemy_hp, enemy_mp, enemy_attack, enemy_defense, enemy_actweight
             )  #親クラスのコンストラクタを呼び出し
         self.__drop_item = drop_item
         self.__drop_money = drop_money
@@ -14,7 +16,7 @@ class player(entity_module.entity):
 
     #装備品(プレイヤーのみ)・状態異常(追加予定)を加味して真の攻撃力を返すメソッド
     #現時点で未実装のため、素の攻撃力を返す
-    def get_true_defense(self):
+    def get_true_attack(self):
         return self.__attack
 
     #装備品(プレイヤーのみ)・状態異常(追加予定)を加味して真の防御力を返すメソッド

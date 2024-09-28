@@ -3,7 +3,7 @@ import mp_module
 from abc import ABC, abstractmethod
 
 #エンティティクラス
-class entity(ABC):
+class Entity(ABC):
     #初期化
     def __init__(self,
                  init_hp:int,
